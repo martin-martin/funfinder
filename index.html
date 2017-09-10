@@ -1,0 +1,49 @@
+<DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="funicon.ico" type="image/x-icon" />
+  <title>FunFinder</title>
+  <!-- Because there is a lot of fun stuff in the world,
+        and not all of it is very obvious. -->
+</head>
+<body>
+  <div id="funbox"></div>
+  <script>
+    /**
+     * Creates a random full integer between 1 and 9999.
+     */
+    function randomWholeNum() {
+      return Math.floor(Math.random() * 10000);
+    }
+
+    // get two random numbers of tons of potential fun
+    var hideBefore = randomWholeNum()
+    var hideBehind = randomWholeNum()
+
+    // make clear whom we're addressing
+    var el = document.getElementById("funbox");
+
+    // make hidden fun
+    var hiddenFun = document.createElement("SPAN");
+    var lotsaText = document.createTextNode("fun ".repeat(hideBefore));
+    hiddenFun.appendChild(lotsaText);
+    hiddenFun.style = "color: white;";
+    el.appendChild(hiddenFun);
+
+    // make one obvious fun
+    var obviousFun = document.createElement("SPAN");
+    var text =  document.createTextNode("fun ");
+    obviousFun.appendChild(text);
+    obviousFun.style = "color: red;";
+    el.appendChild(obviousFun);
+
+    // some more hidden fun (there's a lot!)
+    var hiFun = document.createElement("SPAN");
+    var loTe = document.createTextNode("fun ".repeat(hideBehind));
+    hiFun.appendChild(loTe);
+    hiFun.style = "color: white;";
+    el.appendChild(hiFun);
+
+  </script>
+</body>
+</html>
