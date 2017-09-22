@@ -35,6 +35,9 @@
     var text =  document.createTextNode("fun ");
     obviousFun.appendChild(text);
     obviousFun.style = "color: red;";
+    obviousFun.addEventListener('click', function() {
+      history.go(0);
+    }, false);
     el.appendChild(obviousFun);
 
     // some more hidden fun (there's a lot!)
